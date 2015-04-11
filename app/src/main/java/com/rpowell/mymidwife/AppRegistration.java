@@ -5,14 +5,17 @@
  **************************************************************************/
 package com.rpowell.mymidwife;
 
+import retrofit.Callback;
+
 public class AppRegistration {
 
-    public static boolean loginUser(String username, String password)
-    {
-        return true;
+    public static void loginUser(String username, String password, Callback<LoginResponseMapper> callback) {
+
+        IAppRegistration loginService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(IAppRegistration.class);
+        loginService.loginUser(username, password, callback);
     }
 
-    public static boolean registerUser(String username, String password, String first, String last, String connfirm)
+    public static boolean registerUser(String username, String password, String first, String last, String confirm)
     {
 
         return true;

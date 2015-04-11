@@ -36,6 +36,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 /**
  * A login screen that offers login via email/password.
  */
@@ -148,22 +152,24 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         } else {
             // Show a progress spinner
             showProgress(true);
-
-            boolean success = AppRegistration.loginUser(mEmailView.toString(), mPasswordView.toString());
-            if (success)
-            {
-                Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
-                mainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getApplicationContext().startActivity(mainActivityIntent);
-                finish();
-            }
-            else
-            {
-                mPasswordView.setError(getString(R.string.error_wrong_credentials));
-                focusView = mPasswordView;
-                focusView.requestFocus();
-                showProgress(false);
-            }
+            AppRegistration.loginUser(email, password, new Callback<LoginResponseMapper>() {
+                @Override
+                public void success(LoginResponseMapper s, Response response) {
+                    ApplicationData.getInstance().setCurrentUser(s.getUser());
+                    String sessionToken = NetworkGlobals.parseResponseForSessionToken(response);
+                    NetworkGlobals.setSessionCookie(sessionToken);
+                    Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    mainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getApplicationContext().startActivity(mainActivityIntent);
+                    finish();
+                }
+                @Override
+                public void failure(RetrofitError error) {
+                    mPasswordView.setError(getString(R.string.error_wrong_credentials));
+                    mPasswordView.requestFocus();
+                    showProgress(false);
+                }
+            });
         }
     }
 
