@@ -1,14 +1,40 @@
 <resources>
-    <string name="app_name">MyMidwife</string>
+    <string name="app_name">My Midwife</string>
 
-    <string name="title_section1">Section 1</string>
+    <!-- Navigation drawer entries -->
+    <string name="title_section1">My Baby</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
 
+    <!-- login / registration -->
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="existing_account">"Existing user? Log in"</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_wrong_credentials">The username or password is incorrect</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="error_invalid_password">Password must have at least:
+                                            \n - 8 characters
+                                            \n - One digit
+                                            \n - One upper and lower case letter
+                                            \n - Contain no spaces
+                                            </string>
+
+    <!-- Misc -->
+    <string name="logo">logo</string>
+
+    <!-- Default -->ron
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_example">Example action</string>
-
     <string name="action_settings">Settings</string>
+
+    <!-- Manifest -->
+    <string name="loading_screen">LoadingScreen</string>
 </resources>
