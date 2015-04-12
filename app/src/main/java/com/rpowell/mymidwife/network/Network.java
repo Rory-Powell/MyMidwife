@@ -26,9 +26,9 @@ public class Network {
     }
 
     public static void addMotherDetails(int height, String waist, String weight,
-                                        int weeks, String postcode, String ailement,
+                                        int weeks, String postcode, String ailement, String address,
                                         Callback<MotherDetailsResponseMapper> callback) {
         INetwork motherDetailsService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(INetwork.class);
-        motherDetailsService.addMotherDetails(height, waist, weight, weeks, postcode, ailement, callback);
+        motherDetailsService.addMotherDetails(height, waist, weight, weeks, postcode, ailement, address, callback);
     }
 }

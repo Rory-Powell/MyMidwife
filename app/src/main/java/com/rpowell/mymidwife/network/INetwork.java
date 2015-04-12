@@ -40,6 +40,7 @@ public interface INetwork {
             @Query(value="weeks", encodeValue = true) int weeks,
             @Query(value="postcode", encodeValue = true) String postcode,
             @Query(value="ailment", encodeValue = true) String ailement,
+            @Query(value="address", encodeValue = true) String address,
             Callback<MotherDetailsResponseMapper> cb);
 
     @Headers({ "Accept: application/json", "Content-Type:application/json" })

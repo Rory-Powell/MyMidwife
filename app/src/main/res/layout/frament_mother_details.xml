@@ -183,6 +183,48 @@
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ProfileCardMainProfileTerm"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileTermLabel"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="How far along are you?"
+                    android:textColor="@color/style_color_primary"
+                    android:textSize="25sp" />
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weeks"
+                    android:paddingBottom="15dp"
+                    android:id="@+id/ProfileCardMainProfileContactTerm"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
             android:id="@+id/ProfileCardMainProfileAilment"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
@@ -221,7 +263,6 @@
 
         </android.support.v7.widget.CardView>
 
-
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
@@ -233,7 +274,7 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/loginButton"
+                    android:id="@+id/saveButton"
                     style="@style/registerButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

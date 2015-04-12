@@ -35,25 +35,4 @@ public class NetworkUtils {
             }
         });
     }
-
-    public static void addMotherDetails(int height, String waist, String weight, int weeks,
-                                        String postcode, String ailement)
-    {
-        Network.addMotherDetails(height, waist, weight, weeks, postcode, ailement,
-                new Callback<MotherDetailsResponseMapper>() {
-                    @Override
-                    public void success(MotherDetailsResponseMapper s, Response response) {
-                        MotherDetails motherDetails =
-                                new MotherDetails(s.getHeight(), s.getWaist(), s.getWeight(), s.getWeeks(), s.getPostcode());
-
-                        ApplicationData.getInstance()
-                                .getCurrentUser()
-                                .setMotherDetails(motherDetails);
-                    }
-                    @Override
-                    public void failure(RetrofitError error) {
-
-                    }
-                });
-    }
 }

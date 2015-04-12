@@ -160,29 +160,26 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         } else {
             // Show a progress spinner
             showProgress(true);
-//            Network.loginUser(email, password, new Callback<LoginResponseMapper>() {
-//                @Override
-//                public void success(LoginResponseMapper s, Response response) {
-//                    ApplicationData.getInstance().setCurrentUser(s.getUser());
-//                    String sessionToken = NetworkGlobals.parseResponseForSessionToken(response);
-//                    NetworkGlobals.setSessionCookie(sessionToken);
-//
-//                    NetworkUtils.addMotherDetails(152, "152cm", "80kg", 5, "BT603SF", "Epilepsy");
-//                    NetworkUtils.makeBooking("11-05-2015", "2", "note");
+            Network.loginUser(email, password, new Callback<LoginResponseMapper>() {
+                @Override
+                public void success(LoginResponseMapper s, Response response) {
+                    ApplicationData.getInstance().setCurrentUser(s.getUser());
+                    String sessionToken = NetworkGlobals.parseResponseForSessionToken(response);
+                    NetworkGlobals.setSessionCookie(sessionToken);
 
                     Intent mainActivityIntent = new Intent(getApplicationContext(), MotherDetailsActivity.class);
                     mainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     getApplicationContext().startActivity(mainActivityIntent);
                     finish();
-//                }
-//
-//                @Override
-//                public void failure(RetrofitError error) {
-//                    mPasswordView.setError(getString(R.string.error_wrong_credentials));
-//                    mPasswordView.requestFocus();
-//                    showProgress(false);
-//                }
-//            });
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    mPasswordView.setError(getString(R.string.error_wrong_credentials));
+                    mPasswordView.requestFocus();
+                    showProgress(false);
+                }
+            });
         }
     }
 
