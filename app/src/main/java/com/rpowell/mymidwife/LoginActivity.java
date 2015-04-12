@@ -39,6 +39,7 @@ import com.rpowell.mymidwife.responseMappers.BookingResponseMapper;
 import com.rpowell.mymidwife.responseMappers.LoginResponseMapper;
 import com.rpowell.mymidwife.responseMappers.MotherDetailsResponseMapper;
 import com.rpowell.mymidwife.userObjects.Booking;
+import com.rpowell.mymidwife.userObjects.Midwife;
 import com.rpowell.mymidwife.userObjects.MotherDetails;
 
 import java.util.ArrayList;
@@ -164,13 +165,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void success(LoginResponseMapper s, Response response) {
                     ApplicationData.getInstance().setCurrentUser(s.getUser());
-
-                    // attempt a booking
-                    makeBooking("18-04-2015", "2");
-
-                    // attempt a details
-                    addMotherDetails(158, "38cm", "70kg", 6, "123 Street", "BT97DL", "07849002123");
-
                     String sessionToken = NetworkGlobals.parseResponseForSessionToken(response);
                     NetworkGlobals.setSessionCookie(sessionToken);
                     Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -187,44 +181,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 }
             });
         }
-    }
-
-    public void makeBooking(String date, String session)
-    {
-        String user = ApplicationData.getInstance().getCurrentUser().getUsername();
-        Network.makeBooking(date, session, user, new Callback<BookingResponseMapper>() {
-            @Override
-            public void success(BookingResponseMapper s, Response response) {
-                ApplicationData.getInstance()
-                        .getCurrentUser()
-                        .setBooking(new Booking(s.getDate(), s.getSession()));
-            }
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-        });
-    }
-
-    public void addMotherDetails(int height, String waist, String weight,
-                                 int weeks, String address,String postcode, String number)
-    {
-        String user = ApplicationData.getInstance().getCurrentUser().getUsername();
-        Network.addMotherDetails(user, height, waist, weight, weeks, address,
-                postcode, number, new Callback<MotherDetailsResponseMapper>() {
-            @Override
-            public void success(MotherDetailsResponseMapper s, Response response) {
-                MotherDetails motherDetails = new MotherDetails(s.getAddress(), s.getPostcode(), s.getNumber(),
-                        s.getHeight(), s.getWaist(), s.getWeight(), s.getWeeks());
-                ApplicationData.getInstance()
-                        .getCurrentUser()
-                        .setMotherDetails(motherDetails);
-            }
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-        });
     }
 
     /**

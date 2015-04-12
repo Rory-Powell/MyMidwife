@@ -33,19 +33,12 @@ public interface INetwork {
     @POST("/api/details")
     @Headers({ "Content-Type:application/json" })
     public void addMotherDetails(
-            @Query(value="username", encodeValue = true) String username,
             @Query(value="height", encodeValue = true) int height,
             @Query(value="waist", encodeValue = true) String waist,
             @Query(value="weight", encodeValue = true) String weight,
             @Query(value="weeks", encodeValue = true) int weeks,
-            @Query(value="address", encodeValue = true) String address,
             @Query(value="postcode", encodeValue = true) String postcode,
-            @Query(value="number", encodeValue = true) String number,
             Callback<MotherDetailsResponseMapper> cb);
-
-//    @GET("/api/1/incidents/all/mobile")
-//    @Headers({"Accept: application/json"})
-//    public void getMidwife(Callback<UserinsightIncidentMapper> callback);
 
     @Headers({ "Accept: application/json", "Content-Type:application/json" })
     @POST("/api/1/registration/createUser")

@@ -14,6 +14,22 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = -6119382989755072206L;
 
+    private String username;
+    private String password;
+    private String privileges;
+    private String firstname;
+    private Booking booking;
+    private MotherDetails motherDetails;
+    private Midwife midwife;
+
+    public Midwife getMidwife() {
+        return midwife;
+    }
+
+    public void setMidwife(Midwife midwife) {
+        this.midwife = midwife;
+    }
+
     public User(String username, String password, String privileges, String firstname)
     {
         this.username = username;
@@ -54,11 +70,6 @@ public class User implements Serializable {
         this.firstname = firstname;
     }
 
-    private String username;
-    private String password;
-    private String privileges;
-    private String firstname;
-
     public Booking getBooking() {
         return booking;
     }
@@ -67,10 +78,11 @@ public class User implements Serializable {
         this.booking = booking;
     }
 
+    public MotherDetails getMotherDetails() {
+        return motherDetails;
+    }
+
     public void setMotherDetails(MotherDetails motherDetails) {
         this.motherDetails = motherDetails;
     }
-
-    private Booking booking;
-    private MotherDetails motherDetails;
 }

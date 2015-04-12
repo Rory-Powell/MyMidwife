@@ -5,8 +5,6 @@
  **************************************************************************/
 package com.rpowell.mymidwife.responseMappers;
 
-import retrofit.http.Query;
-
 public class MotherDetailsResponseMapper implements java.io.Serializable {
 
     private static final long serialVersionUID = -8966655440381065205L;
@@ -15,17 +13,7 @@ public class MotherDetailsResponseMapper implements java.io.Serializable {
     private String waist;
     private String weight;
     private int weeks;
-    private String address;
     private String postcode;
-    private String number;
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
 
     public String getPostcode() {
         return postcode;
@@ -33,14 +21,6 @@ public class MotherDetailsResponseMapper implements java.io.Serializable {
 
     public void setPostcode(String postcode) {
         this.postcode = postcode;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public int getWeeks() {

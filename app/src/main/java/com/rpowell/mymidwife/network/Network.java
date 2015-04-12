@@ -25,11 +25,10 @@ public class Network {
         bookingService.makeBooking(date, session, user, callback);
     }
 
-    public static void addMotherDetails(String username, int height, String waist, String weight, int weeks,
-                                        String address, String postcode, String number,
+    public static void addMotherDetails(int height, String waist, String weight,
+                                        int weeks, String postcode,
                                         Callback<MotherDetailsResponseMapper> callback) {
-        INetwork bookingService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(INetwork.class);
-        bookingService.addMotherDetails(username, height, waist, weight, weeks,
-                address, postcode, number, callback);
+        INetwork motherDetailsService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(INetwork.class);
+        motherDetailsService.addMotherDetails(height, waist, weight, weeks, postcode, callback);
     }
 }

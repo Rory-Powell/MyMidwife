@@ -5,6 +5,8 @@
  **************************************************************************/
 package com.rpowell.mymidwife.responseMappers;
 
+import com.rpowell.mymidwife.userObjects.Midwife;
+
 public class BookingResponseMapper implements java.io.Serializable {
 
     private static final long serialVersionUID = -8966655440381065205L;
@@ -12,6 +14,16 @@ public class BookingResponseMapper implements java.io.Serializable {
     private String date;
     private String session;
     private String user;
+
+    public Midwife getMidwife() {
+        return midwife;
+    }
+
+    public void setMidwife(Midwife midwife) {
+        this.midwife = midwife;
+    }
+
+    private Midwife midwife;
 
     public String getUser() {
         return user;
@@ -36,4 +48,5 @@ public class BookingResponseMapper implements java.io.Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
 }
