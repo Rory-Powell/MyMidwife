@@ -10,4 +10,9 @@
     <color name="white">#ffffff</color>
     <color name="paleBlue">#44BBF8</color>
     <color name="green">#00423D</color>
+    <color name="lightBlue">#6699FF</color>
+
+    <color name="style_color_primary">#2d5d82</color>
+    <color name="style_color_primary_dark">#21425d</color>
+    <color name="style_color_accent">#01bcd5</color>
 </resources>

@@ -21,7 +21,7 @@ public class BookingFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        this.containerView = view.findViewById(R.id.bookingDetailsMain);
+        this.containerView = view.findViewById(R.id.bookingMain);
     }
 
     @Override
