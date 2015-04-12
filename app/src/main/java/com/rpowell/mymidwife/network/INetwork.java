@@ -28,6 +28,7 @@ public interface INetwork {
                             @Query(value="date", encodeValue = true) String date,
                             @Query(value="session", encodeValue = true) String session,
                             @Query(value="user", encodeValue = true) String user,
+                            @Query(value="notes", encodeValue = true) String note,
                             Callback<BookingResponseMapper> cb);
 
     @POST("/api/details")
@@ -38,6 +39,7 @@ public interface INetwork {
             @Query(value="weight", encodeValue = true) String weight,
             @Query(value="weeks", encodeValue = true) int weeks,
             @Query(value="postcode", encodeValue = true) String postcode,
+            @Query(value="ailment", encodeValue = true) String ailement,
             Callback<MotherDetailsResponseMapper> cb);
 
     @Headers({ "Accept: application/json", "Content-Type:application/json" })

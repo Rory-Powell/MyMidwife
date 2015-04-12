@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?><!-- item_feed.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motherDetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ProfileCardMainProfilePicCard"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileAddPicLabel"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Add your details"
+                    android:textColor="@color/style_color_primary"
+                    android:textSize="30sp" />
+
+                <at.markushi.ui.CircleButton
+                    android:layout_width="120dip"
+                    android:layout_height="120dip"
+                    android:src="@drawable/add_pic"
+                    card_view:cb_color="@color/style_color_primary_dark"
+                    card_view:cb_pressedRingWidth="8dip"
+                    android:id="@+id/ProfileCardMainProfileAddPic"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileDetailsName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="Name"
+                    android:layout_marginBottom="5dp"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ProfileCardMainProfileContactDetails"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileContactLabel"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Contact"
+                    android:textColor="@color/style_color_primary"
+                    android:textSize="25sp" />
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="My Address"
+                    android:id="@+id/ProfileCardMainProfileContactAddress"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="My Postcode"
+                    android:id="@+id/ProfileCardMainProfileContactPostcode"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+                <EditText
+                    android:id="@+id/ProfileCardMainProfileDetailsNumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="Contact Number"
+                    android:inputType="phone"
+                    android:paddingBottom="15dp"
+                    android:layout_marginBottom="5dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ProfileCardMainProfileContactAbout"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileAboutMeLabel"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="About Me"
+                    android:textColor="@color/style_color_primary"
+                    android:textSize="25sp" />
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Height (cm)"
+                    android:id="@+id/ProfileCardMainProfileContactHeight"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight (kg)"
+                    android:paddingBottom="15dp"
+                    android:id="@+id/ProfileCardMainProfileContactWeight"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Waist (cm)"
+                    android:paddingBottom="15dp"
+                    android:id="@+id/ProfileCardMainProfileContactWaist"
+                    android:textColor="@color/style_color_primary"
+                    android:fontFamily="sans-serif-light"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ProfileCardMainProfileAilment"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp">
+
+                <TextView
+                    android:id="@+id/ProfileCardMainProfileAilmentLabel"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Do you suffer from?"
+                    android:textColor="@color/style_color_primary"
+                    android:textSize="25sp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ailmentSpinner"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="sans-serif-light"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingStart="16dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/loginButton"
+                    style="@style/registerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Save"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -6,4 +6,8 @@
         <item name="colorPrimaryDark">@color/style_color_primary_dark</item>
         <item name="colorAccent">@color/style_color_accent</item>
     </style>
+
+    <style name="registerButton" parent="android:style/Widget.Material.Button">
+        <item name="android:background">@drawable/registration_button_background</item>
+    </style>
 </resources>

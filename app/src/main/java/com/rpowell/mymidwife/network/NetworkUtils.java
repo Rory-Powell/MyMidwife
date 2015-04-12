@@ -15,10 +15,10 @@ import retrofit.client.Response;
  */
 public class NetworkUtils {
 
-    public void makeBooking(String date, String session)
+    public static void makeBooking(String date, String session, String note)
     {
         String user = ApplicationData.getInstance().getCurrentUser().getUsername();
-        Network.makeBooking(date, session, user, new Callback<BookingResponseMapper>() {
+        Network.makeBooking(date, session, user, note, new Callback<BookingResponseMapper>() {
             @Override
             public void success(BookingResponseMapper s, Response response) {
                 ApplicationData.getInstance()
@@ -36,9 +36,10 @@ public class NetworkUtils {
         });
     }
 
-    public void addMotherDetails(int height, String waist, String weight, int weeks, String postcode)
+    public static void addMotherDetails(int height, String waist, String weight, int weeks,
+                                        String postcode, String ailement)
     {
-        Network.addMotherDetails(height, waist, weight, weeks, postcode,
+        Network.addMotherDetails(height, waist, weight, weeks, postcode, ailement,
                 new Callback<MotherDetailsResponseMapper>() {
                     @Override
                     public void success(MotherDetailsResponseMapper s, Response response) {

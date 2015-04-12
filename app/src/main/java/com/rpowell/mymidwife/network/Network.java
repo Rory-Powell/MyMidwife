@@ -19,16 +19,16 @@ public class Network {
         loginService.loginUser(username, password, callback);
     }
 
-    public static void makeBooking(String date,String session, String user,
+    public static void makeBooking(String date,String session, String user, String note,
                                    Callback<BookingResponseMapper> callback) {
         INetwork bookingService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(INetwork.class);
-        bookingService.makeBooking(date, session, user, callback);
+        bookingService.makeBooking(date, session, user, note, callback);
     }
 
     public static void addMotherDetails(int height, String waist, String weight,
-                                        int weeks, String postcode,
+                                        int weeks, String postcode, String ailement,
                                         Callback<MotherDetailsResponseMapper> callback) {
         INetwork motherDetailsService = NetworkGlobals.getNonAuthenticatedRestAdapater().create(INetwork.class);
-        motherDetailsService.addMotherDetails(height, waist, weight, weeks, postcode, callback);
+        motherDetailsService.addMotherDetails(height, waist, weight, weeks, postcode, ailement, callback);
     }
 }

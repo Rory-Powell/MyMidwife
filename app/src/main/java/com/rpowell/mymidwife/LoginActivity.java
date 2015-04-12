@@ -35,8 +35,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.rpowell.mymidwife.network.Network;
+import com.rpowell.mymidwife.network.NetworkGlobals;
+import com.rpowell.mymidwife.network.NetworkUtils;
+import com.rpowell.mymidwife.responseMappers.LoginResponseMapper;
+import com.rpowell.mymidwife.userObjects.MotherDetailsActivity;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * A login screen that offers login via email/password.
@@ -156,7 +166,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 //                    ApplicationData.getInstance().setCurrentUser(s.getUser());
 //                    String sessionToken = NetworkGlobals.parseResponseForSessionToken(response);
 //                    NetworkGlobals.setSessionCookie(sessionToken);
-                    Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+//
+//                    NetworkUtils.addMotherDetails(152, "152cm", "80kg", 5, "BT603SF", "Epilepsy");
+//                    NetworkUtils.makeBooking("11-05-2015", "2", "note");
+
+                    Intent mainActivityIntent = new Intent(getApplicationContext(), MotherDetailsActivity.class);
                     mainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     getApplicationContext().startActivity(mainActivityIntent);
                     finish();

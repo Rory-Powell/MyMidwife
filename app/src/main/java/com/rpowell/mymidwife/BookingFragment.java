@@ -1,40 +1,42 @@
-package com.rpowell.mymidwife;
+package com.rpowell.mymidwife; /***************************************************************************
+ * COPYRIGHT (C) 2015, Rapid7 LLC, Boston, MA, USA.
+ * All rights reserved. This material contains unpublished, copyrighted
+ * work including confidential and proprietary information of Rapid7.
+ **************************************************************************/
 
-import android.app.Fragment;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rpowell.mymidwife.R;
-
-/**
- * Created by rpowell on 23/03/15.
- */
 public class BookingFragment extends Fragment {
-    private View containerView;
-    protected int res;
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        this.containerView = view.findViewById(R.id.bookingMain);
+    private static final BookingFragment activity = new BookingFragment();
+
+    public static BookingFragment getInstance() {
+        return activity;
     }
 
+    Context context;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_booking, container, false);
+        context = rootView.getContext();
+        return rootView;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-//        View rootView = inflater.inflate(R.layout.booking_details, container, false);
-//        return rootView;
-        return null;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
     }
 
 }

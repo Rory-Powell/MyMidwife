@@ -48,6 +48,10 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.drawer_layout, new BookingFragment(), "BOOKING")
+//                .commit();
     }
 
 //    @Override
