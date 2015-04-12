@@ -3,7 +3,9 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package com.rpowell.mymidwife;
+package com.rpowell.mymidwife.network;
+
+import com.rpowell.mymidwife.exceptions.NoSessionException;
 
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
@@ -30,7 +32,7 @@ public class NetworkGlobals {
     /**
      * Provides a RestAdapter that doesn't include the a session token.
      * @return A RestAdapter for non-authenticated network calls.
-     * @throws NoSessionException if the user does not have a session token.
+     * @throws com.rpowell.mymidwife.exceptions.NoSessionException if the user does not have a session token.
      */
     public static RestAdapter getAuthenticatedRestAdapater()
         throws NoSessionException

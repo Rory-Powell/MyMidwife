@@ -3,7 +3,11 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package com.rpowell.mymidwife;
+package com.rpowell.mymidwife.network;
+
+import com.rpowell.mymidwife.responseMappers.BookingResponseMapper;
+import com.rpowell.mymidwife.responseMappers.LoginResponseMapper;
+import com.rpowell.mymidwife.responseMappers.MotherDetailsResponseMapper;
 
 import retrofit.Callback;
 

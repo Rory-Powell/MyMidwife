@@ -7,6 +7,8 @@ package com.rpowell.mymidwife;
 
 import android.app.Application;
 
+import com.rpowell.mymidwife.userObjects.User;
+
 public class ApplicationData extends Application {
 
     private User user;

@@ -3,7 +3,7 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package com.rpowell.mymidwife;
+package com.rpowell.mymidwife.responseMappers;
 
 public class BookingResponseMapper implements java.io.Serializable {
 
