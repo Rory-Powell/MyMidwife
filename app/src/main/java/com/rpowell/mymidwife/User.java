@@ -58,4 +58,19 @@ public class User implements Serializable {
     private String password;
     private String privileges;
     private String firstname;
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
+    }
+
+    public void setMotherDetails(MotherDetails motherDetails) {
+        this.motherDetails = motherDetails;
+    }
+
+    private Booking booking;
+    private MotherDetails motherDetails;
 }

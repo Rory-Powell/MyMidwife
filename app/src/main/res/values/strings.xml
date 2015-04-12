@@ -3,8 +3,9 @@
 
     <!-- Navigation drawer entries -->
     <string name="title_section1">My Baby</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section2">Book Appointment</string>
+    <string name="title_section4">Previous Appointments</string>
+    <string name="title_section3">My Details</string>
 
     <!-- login / registration -->
     <string name="sign_up">Sign Up</string>
